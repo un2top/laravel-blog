@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 
 
-class ShowController extends Controller
+class DeleteController extends Controller
 {
     public function __invoke(Category $category)
     {
-        return view('admin.category.show', compact('category'));
+        $category->delete();
+        return redirect()->route('admin.category.index');
     }
 }
