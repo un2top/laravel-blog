@@ -37,7 +37,7 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group w-50">
                                 <textarea id="summernote" name="content">{{old('content')}}</textarea>
                                 @error('content')
                                 <div class="text-danger">
@@ -88,18 +88,18 @@
                                         >{{$category->title}}</option>
                                     @endforeach
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Тэги</label>
-                                <select class="select2" name="tag_ids[]" multiple="multiple"
-                                        data-placeholder="Выбирете тэги"
-                                        style="width: 100%;">
-                                    @foreach($tags as $tag)
-                                        <option
-                                            {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }}
-                                            value="{{$tag->id}}">{{$tag->title}}</option>
-                                    @endforeach
-                                </select>
+                                <div class="form-group">
+                                    <label>Тэги</label>
+                                    <select class="select2" name="tag_ids[]" multiple="multiple"
+                                            data-placeholder="Выбирете тэги"
+                                            style="width: 100%;">
+                                        @foreach($tags as $tag)
+                                            <option
+                                                {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }}
+                                                value="{{$tag->id}}">{{$tag->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Добавить">
