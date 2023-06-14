@@ -10,7 +10,7 @@
                             <div class="blog-post-thumbnail-wrapper">
                                 <img src="{{'storage/'.$post->preview_image}}" alt="blog post">
                             </div>
-                            <p class="blog-post-category">{{$post->category->title}}</p>
+                            @include('post.likes')
                             <a href="{{route('post.show', $post->id)}}" class="blog-post-permalink">
                                 <h6 class="blog-post-title">{{$post->title}}</h6>
                             </a>
@@ -32,6 +32,7 @@
                                     <div class="blog-post-thumbnail-wrapper">
                                         <img src="{{'storage/'.$post->preview_image}}" alt="blog post">
                                     </div>
+                                    @include('post.likes')
                                     <p class="blog-post-category">{{$post->category->title}}</p>
                                     <a href="{{route('post.show', $post->id)}}" class="blog-post-permalink">
                                         <h6 class="blog-post-title">{{$post->title}}</h6>
@@ -42,7 +43,7 @@
                     </section>
                 </div>
                 <div class="col-md-4 sidebar" data-aos="fade-left">
-                     <div class="widget widget-post-list">
+                    <div class="widget widget-post-list">
                         <h5 class="widget-title">Популярные посты</h5>
                         <ul class="post-list">
                             @foreach($likedPosts as $post)
